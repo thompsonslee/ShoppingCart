@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
-import SideBar from './Components/Sidebar.jsx'
-import HomePage from './Pages/HomePage'
-import ShopPage from './Pages/ShopPage'
-import CartPage from './Pages/Cartpage'
+import SideBar from './Components/Sidebar/Sidebar'
+import HomePage from './Pages/HomePage/HomePage'
+import ShopPage from './Pages/ShopPage/ShopPage'
+import CartPage from './Pages/Cartpage/Cartpage'
 import './App.css'
 import { useState, useEffect } from 'react'
 

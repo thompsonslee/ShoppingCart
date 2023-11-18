@@ -1,4 +1,4 @@
-import ProductCard from "../Components/ProductCard"
+import ProductCard from "../../Components/ProductCard/ProductCard.jsx"
 
 export default function ShopPage({products}){
 
