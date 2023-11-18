@@ -1,6 +1,18 @@
-export default function ShopPage(){
+import ProductCard from "../Components/ProductCard"
 
+export default function ShopPage({products}){
+
+    console.log(products)
     return(
-        <div>ShopPage</div>
+        <>
+        {products.map((product) =>{
+            return(
+                <ProductCard
+                    product={product}
+                    key={product.id}
+                />
+            )
+        })}
+        </>
     )
 }

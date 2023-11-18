@@ -4,13 +4,6 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
-const fetchProducts = () => {
-  fetch('https://fakestoreapi.com/products')
-          .then(res=>res.json())
-          .then(json=>console.log(json))
-}
-
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
