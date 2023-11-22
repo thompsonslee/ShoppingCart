@@ -3,6 +3,7 @@ import SideBar from './Components/Sidebar/Sidebar'
 import HomePage from './Pages/HomePage/HomePage'
 import ShopPage from './Pages/ShopPage/ShopPage'
 import CartPage from './Pages/Cartpage/Cartpage'
+import ProductPage from './Pages/ProductPage/ProductPage'
 import './App.css'
 import { useState, useEffect } from 'react'
 
@@ -15,6 +16,11 @@ function App() {
     setProducts(products)
   }
 
+  const getProduct = (id) =>{
+    console.log(id)
+    return products.find(product => product.id === id)
+  }
+
   useEffect(() => {
     fetchProducts()
   },[])
@@ -25,7 +31,9 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/shopPage' element={<ShopPage products={products} />} />
+        <Route path='/shopPage/:id' element={<ProductPage getProduct={getProduct}/>} />
         <Route path='/cartPage' element={<CartPage />} />
+        
       </Routes>
     </>
   )
