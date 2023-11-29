@@ -11,28 +11,28 @@ export default function SideBar(){
             <h1>Lorem Ipsum</h1>
             <ul className='main-list'>
                 <li>
-                    <Link to= '/'>
+                    <Link to= '/' className='sidebar-link'>
                         <img src={homeLogo} className='icon'></img>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to= 'shopPage'>
+                    <Link to= 'shopPage' className='sidebar-link'>
                         <img src={shopLogo} className='icon'></img>
                         Shop
                     </Link>
                 </li>
                 <li>
-                    <Link to = 'cartPage'>
+                    <Link to = 'cartPage' className='sidebar-link'>
                         <img src={cartLogo} className='icon'></img>
                         Cart
                     </Link>
                 </li>
             </ul>
-            <ul>
+            <div className='bottom-links'>
                 <li>Help</li>
                 <li>Contact Us</li>
-            </ul>
+            </div>
         </div>
     )
 }
