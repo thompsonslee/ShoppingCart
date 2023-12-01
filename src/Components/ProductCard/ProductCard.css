@@ -1,9 +1,31 @@
 .product-Card{
-    height: 200px;
-    width: 150px;
-}
-img{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 4px 5px 8px -1px #00000075
+    
+}
+.product-image-div{
+    background-color: white;
+    overflow: hidden;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.product-Card img{
+    object-fit: scale-down;
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+}
+.product-card-details{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.product-card-details h2{
+    margin-bottom: 5px;
 }

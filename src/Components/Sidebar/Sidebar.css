@@ -7,10 +7,10 @@
     gap: 40px;
     border-radius: 30px;
 }
-h1{
+.sidebar > h1{
     color: white;
 }
-ul{
+.sidebar > ul{
     display: flex;
     flex-direction: column;
     list-style: none;

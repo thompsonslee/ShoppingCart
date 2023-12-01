@@ -7,7 +7,7 @@ export default function ProductPage({getProduct,addToCart}){
 
     return(
         <>
-        <div>{product.title}</div>
+            <div>{product?.title}</div>
             <button onClick={() => addToCart(id)}/>
         </>
     )
