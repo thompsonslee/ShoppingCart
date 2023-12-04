@@ -55,9 +55,9 @@ function App() {
         <Route path='/shopPage' element={
           <ShopPage products={products} />
         }/>
-        <Route path='/shopPage/:id' element={
-          <ProductPage getProduct={getProduct} addToCart={addToCart}/>
-        }/>
+        <Route path='/product/:id' element={
+          <ProductPage getProduct={getProduct} addToCart={addToCart} />
+        } />
         <Route path='/cartPage' element={
           <CartPage
             cart={cart}

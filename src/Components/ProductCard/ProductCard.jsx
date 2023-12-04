@@ -4,7 +4,7 @@ import './ProductCard.css'
 export default function ProductCard({product}){
 
     return(
-            <Link to={`./${product.id}`}>
+            <Link to={`/product/${product.id}`}>
             <div className="product-Card">
                 <div className='product-image-div'>
                     <img src={product.image}></img>
