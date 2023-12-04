@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 
 function App() {
   const [products,setProducts] = useState([])
+  const [featureProducts,setFeatureProducts] = useState([])
   const [cart,setCart] = useState([])
 
   const addToCart = (id) =>{
@@ -18,9 +19,22 @@ function App() {
     setCart(cart.filter(item => item != id))
   }
   const fetchProducts = async () => {
+    console.log('fetchProducts()')
     const res = await fetch('https://fakestoreapi.com/products')
     const products = await res.json()
+    let featuredProducts = []
+    for(let i = 0 ; i < 4 ;){
+      const product = products[Math.floor(Math.random() * products.length)]
+      if(featuredProducts.find((currproduct) => currproduct.id == product.id)){
+        console.log('duplicate id')
+      }
+      else{
+      featuredProducts.push(product)
+      i++
+      }
+    }
     setProducts(products)
+    setFeatureProducts(featuredProducts)
   }
 
   const getProduct = (id) =>{
@@ -36,7 +50,7 @@ function App() {
       <SideBar />
       <Routes>
         <Route path='/' element={
-          <HomePage />
+          <HomePage featureProducts = {featureProducts}/>
         }/>
         <Route path='/shopPage' element={
           <ShopPage products={products} />
