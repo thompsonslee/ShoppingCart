@@ -20,8 +20,9 @@ function App() {
   }
   const fetchProducts = async () => {
     console.log('fetchProducts()')
-    const res = await fetch('https://fakestoreapi.com/products')
+    const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')
     const products = await res.json()
+    console.log(products)
     let featuredProducts = []
     for(let i = 0 ; i < 4 ;){
       const product = products[Math.floor(Math.random() * products.length)]

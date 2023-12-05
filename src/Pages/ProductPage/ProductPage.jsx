@@ -10,7 +10,7 @@ export default function ProductPage({getProduct,addToCart}){
         {(product != undefined) && (
             <>
                 <div className="product-image-container">
-                    <img src={product.image} />
+                    <img src={product.images[0]} />
                 </div>
                 <div className="product-heading">
                     <h1>{product.title}</h1>
