@@ -1,0 +1,14 @@
+.CartItemCard{
+    width: 100%;
+    display: flex;
+}
+.cartItemImageContainer{
+    height: 200px;
+}
+.cartItemImageContainer img{
+    width: 100%;
+    height: 100%;
+}
+.cartDetails{
+    display: flex;
+}
