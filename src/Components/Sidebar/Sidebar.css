@@ -17,11 +17,11 @@
     list-style: none;
     gap: 20px;
 }
-a{
+.sidebar a{
     color: white;
     text-decoration: none;
 }
-a:hover{
+.sidebar a:hover{
     color: #0ff;
 }
 .sidebar-link{

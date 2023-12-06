@@ -4,8 +4,7 @@ import './ProductCard.css'
 export default function ProductCard({product}){
 
     return(
-            <Link to={`/product/${product.id}`}>
-            <div className="product-Card">
+            <Link to={`/product/${product.id}`} className="Product-Card">
                 <div className='product-image-div'>
                     <img src={product.images[0]}></img>
                 </div>
@@ -13,7 +12,6 @@ export default function ProductCard({product}){
                     <h2>{product.title}</h2>
                     <p>${product.price}</p>
                 </div>
-            </div>
             </Link>
     )
 }
