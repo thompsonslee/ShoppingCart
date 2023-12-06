@@ -37,3 +37,17 @@
     list-style: none;
     margin-top: auto;
 }
+.cartQty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: black;
+    background-color: aqua;
+    padding: 4px;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+}

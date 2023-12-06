@@ -48,7 +48,7 @@ function App() {
 
   return (
     <>
-      <SideBar />
+      <SideBar cartQty = {cart.length}/>
       <Routes>
         <Route path='/' element={
           <HomePage featureProducts = {featureProducts}/>
