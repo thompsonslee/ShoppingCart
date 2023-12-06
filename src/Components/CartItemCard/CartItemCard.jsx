@@ -14,9 +14,8 @@ export default function CartItemCard({item,removeFromCart}){
                     </div>
                     <div className="listCartDetails-bottom"></div>
                 </div>
-                <button className="listCartRemoveButton">Remove</button>
+                <button onClick={() => removeFromCart(item.id)} className="listCartRemoveButton">Remove</button>
             </div>
-            <button onClick={() => removeFromCart(item.id)} />
         </div>
     )
 }
