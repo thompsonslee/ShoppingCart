@@ -13,25 +13,25 @@ function App() {
   const [cart,setCart] = useState([])
 
   const addToCart = (id) =>{
+    console.log(cart)
+    if(cart.includes(id)){
+      console.log(id)
+      return
+    }
     setCart(cart => [...cart,parseInt(id)])
   }
   const removeFromCart = (id) =>{
     setCart(cart.filter(item => item != id))
   }
   const fetchProducts = async () => {
-    console.log('fetchProducts()')
     const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')
     const products = await res.json()
-    console.log(products)
     let featuredProducts = []
     for(let i = 0 ; i < 4 ;){
       const product = products[Math.floor(Math.random() * products.length)]
-      if(featuredProducts.find((currproduct) => currproduct.id == product.id)){
-        console.log('duplicate id')
-      }
-      else{
-      featuredProducts.push(product)
-      i++
+      if(!featuredProducts.find((currproduct) => currproduct.id == product.id)){
+        featuredProducts.push(product)
+        i++
       }
     }
     setProducts(products)
