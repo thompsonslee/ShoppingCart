@@ -13,15 +13,16 @@ function App() {
   const [cart,setCart] = useState([])
 
   const addToCart = (id) =>{
-    console.log(cart)
-    if(cart.includes(id)){
-      console.log(id)
-      return
+    if(!cart.find((cartItem) => cartItem.id == id)){
+      setCart(cart => [...cart,{id: id, qty: 1}])
+      console.log(cart)
     }
-    setCart(cart => [...cart,parseInt(id)])
+    else{
+      console.log('already in cart')
+    }
   }
   const removeFromCart = (id) =>{
-    setCart(cart.filter(item => item != id))
+    setCart(cart.filter(item => item.id != id))
   }
   const fetchProducts = async () => {
     const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')

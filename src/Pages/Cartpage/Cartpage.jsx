@@ -15,13 +15,13 @@ export default function CartPage({
                 </>
             ) : (
 
-            cart.map((cartID) => {
-                const item = getProduct(cartID)
+            cart.map((cartItem) => {
+                const item = getProduct(cartItem.id)
                 return(
                     <CartItemCard
                         item={item}
                         removeFromCart={removeFromCart}
-                        key={cartID}
+                        key={cartItem.id}
                      />
                 )})
            )}
