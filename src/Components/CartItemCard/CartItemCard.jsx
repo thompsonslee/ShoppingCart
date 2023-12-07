@@ -1,5 +1,5 @@
 import './CartItemCard.css'
-export default function CartItemCard({item,removeFromCart}){
+export default function CartItemCard({item,removeFromCart,qty,changeQty}){
 
     return(
         <div className="CartItemCard">
@@ -10,9 +10,14 @@ export default function CartItemCard({item,removeFromCart}){
                 <div className="listCartDetails">
                     <div className="listCartDetails-top">
                         <h2>{item.title}</h2>
-                        <p>{item.price}</p>
+                        <p>${item.price}</p>
+                        <p>Total: ${item.price * qty}</p>
                     </div>
-                    <div className="listCartDetails-bottom"></div>
+                    <div className="listCartDetails-bottom">
+                        <button onClick={() => {changeQty(item.id,'-')}} className='quantity-sub-btn'>-</button>
+                        <div className='qtyOutput'>{qty}</div>
+                        <button onClick={() => {changeQty(item.id,'+')}} className='quantity-add-btn'>+</button>
+                    </div>
                 </div>
                 <button onClick={() => removeFromCart(item.id)} className="listCartRemoveButton">Remove</button>
             </div>

@@ -4,7 +4,8 @@ import CartItemCard from "../../Components/CartItemCard/CartItemCard"
 export default function CartPage({
     cart,
     getProduct,
-    removeFromCart
+    removeFromCart,
+    changeQty
 }){
     return(
         <div className="CartPage">
@@ -21,6 +22,8 @@ export default function CartPage({
                     <CartItemCard
                         item={item}
                         removeFromCart={removeFromCart}
+                        qty={cartItem.qty}
+                        changeQty={changeQty}
                         key={cartItem.id}
                      />
                 )})

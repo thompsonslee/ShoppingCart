@@ -24,6 +24,25 @@ function App() {
   const removeFromCart = (id) =>{
     setCart(cart.filter(item => item.id != id))
   }
+
+  const changeQty = (id,string) => {
+    let updatedCart = cart.map((cartItem) => {
+      if(cartItem.id == id){
+        if(string === '+'){
+          return({...cartItem, qty: cartItem.qty + 1})
+        }
+        else{
+          if(cartItem.qty === 1){return cartItem}
+          return({...cartItem, qty: cartItem.qty - 1})
+        }
+      }
+      else{
+        return cartItem
+      }
+    })
+    setCart(updatedCart)
+
+  }
   const fetchProducts = async () => {
     const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')
     const products = await res.json()
@@ -64,7 +83,8 @@ function App() {
           <CartPage
             cart={cart}
             getProduct={getProduct} 
-            removeFromCart={removeFromCart}/>
+            removeFromCart={removeFromCart}
+            changeQty={changeQty}/>
         }/>
         
       </Routes>
