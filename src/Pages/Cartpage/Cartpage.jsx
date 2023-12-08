@@ -17,22 +17,27 @@ export default function CartPage({
                 </>
             ) : (
                 <>
-                    <h1>YOUR CART ({cart.length} ITEMS)</h1>
-                    {cart.map((cartItem) => {
-                        const item = getProduct(cartItem.id)
-                        return(
-                            <CartItemCard
-                                item={item}
-                                removeFromCart={removeFromCart}
-                                qty={cartItem.qty}
-                                changeQty={changeQty}
-                                key={cartItem.id}
-                            />
-                        )})
-                    }
+                    <h1 className='cartPage-header'>YOUR CART ({cart.length} ITEMS)</h1>
+                    <div className='cartItemsList'>
+                        {cart.map((cartItem) => {
+                            const item = getProduct(cartItem.id)
+                            return(
+                                <CartItemCard
+                                    item={item}
+                                    removeFromCart={removeFromCart}
+                                    qty={cartItem.qty}
+                                    changeQty={changeQty}
+                                    key={cartItem.id}
+                                />
+                            )})
+                        }
+                    </div>
                     <div className='subTotalSection'>
-                        <p>SUBTOTAL</p>
-                        <span>{getTotalCartCost()}</span>
+                        <div className='subTotal'>
+                            <p>SUBTOTAL:</p>
+                            <span>$ {getTotalCartCost()}</span>
+                        </div>
+                        <button className='checkout-btn'>CHECKOUT</button>
                     </div>
                 </>
                 )} 

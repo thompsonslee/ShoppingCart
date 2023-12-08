@@ -14,9 +14,9 @@ export default function CartItemCard({item,removeFromCart,qty,changeQty}){
                         <p>Total: ${item.price * qty}</p>
                     </div>
                     <div className="listCartDetails-bottom">
-                        <button onClick={() => {changeQty(item.id,'-')}} className='quantity-sub-btn'>-</button>
+                        <button onClick={() => {changeQty(item.id,'-')}} className='quantity-btn'>-</button>
                         <div className='qtyOutput'>{qty}</div>
-                        <button onClick={() => {changeQty(item.id,'+')}} className='quantity-add-btn'>+</button>
+                        <button onClick={() => {changeQty(item.id,'+')}} className='quantity-btn'>+</button>
                     </div>
                 </div>
                 <button onClick={() => removeFromCart(item.id)} className="listCartRemoveButton">Remove</button>
