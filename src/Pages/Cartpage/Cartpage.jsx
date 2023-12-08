@@ -5,7 +5,8 @@ export default function CartPage({
     cart,
     getProduct,
     removeFromCart,
-    changeQty
+    changeQty,
+    getTotalCartCost
 }){
     return(
         <div className="CartPage">
@@ -15,20 +16,26 @@ export default function CartPage({
                     <button>SHOP NOW</button>
                 </>
             ) : (
-
-            cart.map((cartItem) => {
-                const item = getProduct(cartItem.id)
-                return(
-                    <CartItemCard
-                        item={item}
-                        removeFromCart={removeFromCart}
-                        qty={cartItem.qty}
-                        changeQty={changeQty}
-                        key={cartItem.id}
-                     />
-                )})
-           )}
-            
+                <>
+                    <h1>YOUR CART ({cart.length} ITEMS)</h1>
+                    {cart.map((cartItem) => {
+                        const item = getProduct(cartItem.id)
+                        return(
+                            <CartItemCard
+                                item={item}
+                                removeFromCart={removeFromCart}
+                                qty={cartItem.qty}
+                                changeQty={changeQty}
+                                key={cartItem.id}
+                            />
+                        )})
+                    }
+                    <div className='subTotalSection'>
+                        <p>SUBTOTAL</p>
+                        <span>{getTotalCartCost()}</span>
+                    </div>
+                </>
+                )} 
         </div>
     )
 }

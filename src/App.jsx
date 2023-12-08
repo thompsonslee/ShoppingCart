@@ -41,8 +41,16 @@ function App() {
       }
     })
     setCart(updatedCart)
-
   }
+
+  const getTotalCartCost = () =>{
+    return(
+      cart.reduce((accum,cartItem) => {
+      return accum + ((getProduct(cartItem.id).price) * cartItem.qty)
+      },0)
+    )
+  }
+
   const fetchProducts = async () => {
     const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')
     const products = await res.json()
@@ -84,7 +92,8 @@ function App() {
             cart={cart}
             getProduct={getProduct} 
             removeFromCart={removeFromCart}
-            changeQty={changeQty}/>
+            changeQty={changeQty}
+            getTotalCartCost={getTotalCartCost}/>
         }/>
         
       </Routes>
