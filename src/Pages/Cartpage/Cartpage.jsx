@@ -1,4 +1,5 @@
 import './Cartpage.css'
+import { Link } from "react-router-dom";
 import CartItemCard from "../../Components/CartItemCard/CartItemCard"
 
 export default function CartPage({
@@ -11,10 +12,10 @@ export default function CartPage({
     return(
         <div className="CartPage">
             {(cart.length === 0) ? (
-                <>
+                <div className='empty-cart-section'>
                     <h2>YOUR CART IS EMPTY</h2>
-                    <button>SHOP NOW</button>
-                </>
+                    <Link to='/shopPage'>SHOP NOW</Link>
+                </div>
             ) : (
                 <>
                     <h1 className='cartPage-header'>YOUR CART ({cart.length} ITEMS)</h1>

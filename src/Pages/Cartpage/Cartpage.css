@@ -4,6 +4,27 @@
     gap: 20px;
     width: 100%;
 }
+
+.empty-cart-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    gap: 20px;
+    margin-top: 30%;
+}
+.empty-cart-section h2{
+    font-size: 24px;
+}
+.empty-cart-section a{
+    color: white;
+    background-color: #222222;
+    font-size: 24px;
+    padding: 1rem 2rem;
+    border-radius: 14px;
+}
 .cartPage-header{
     display: flex;
     justify-content: center;
