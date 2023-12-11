@@ -52,7 +52,7 @@ function App() {
   }
 
   const fetchProducts = async () => {
-    const res = await fetch('https://api.escuelajs.co/api/v1/categories/1/products')
+    const res = await fetch('https://api.escuelajs.co/api/v1/products')
     const products = await res.json()
     let featuredProducts = []
     for(let i = 0 ; i < 4 ;){
