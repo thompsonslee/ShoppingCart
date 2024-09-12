@@ -53,7 +53,9 @@ function App() {
 
   const fetchProducts = async () => {
     const res = await fetch('https://api.escuelajs.co/api/v1/products')
-    const products = await res.json()
+    let products = await res.json()
+    console.log(products)
+    products = products.filter(product => product.images.length === 3 ? true : false)
     console.log(products)
     let featuredProducts = []
     for(let i = 0 ; i < 4 ;){
