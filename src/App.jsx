@@ -1,9 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import SideBar from './Components/Sidebar/Sidebar'
 import HomePage from './Pages/HomePage/HomePage'
 import ShopPage from './Pages/ShopPage/ShopPage'
 import CartPage from './Pages/Cartpage/Cartpage'
 import ProductPage from './Pages/ProductPage/ProductPage'
+import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import './App.css'
 import { useState, useEffect } from 'react'
 
@@ -11,6 +12,7 @@ function App() {
   const [products,setProducts] = useState([])
   const [featureProducts,setFeatureProducts] = useState([])
   const [cart,setCart] = useState([])
+  const [apiError, setApiError] = useState(false)
 
   const addToCart = (id) =>{
     if(!cart.find((cartItem) => cartItem.id == id)){
@@ -57,6 +59,11 @@ function App() {
     console.log(products)
     products = products.filter(product => product.images.length === 3 ? true : false)
     console.log(products)
+    if(!products.length){
+      setApiError(true)
+      return
+    }
+
     let featuredProducts = []
     for(let i = 0 ; i < 4 ;){
       const product = products[Math.floor(Math.random() * products.length)]
@@ -80,7 +87,8 @@ function App() {
   return (
     <>
       <SideBar cartQty = {cart.length}/>
-      <Routes>
+      {apiError ? <ErrorPage /> : 
+        <Routes>
         <Route path='/' element={
           <HomePage featureProducts = {featureProducts}/>
         }/>
@@ -100,6 +108,8 @@ function App() {
         }/>
         
       </Routes>
+      }
+
     </>
   )
 }

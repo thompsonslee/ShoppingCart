@@ -1,0 +1,17 @@
+.ErrorBox{
+    display: flex;
+    max-width: 300px;
+    border-radius: 6px;
+    border: solid 1px rgb(255 205 199);;
+    background-color: rgb(255 234 229);
+    padding: 4px 12px 4px 12px;
+    border-left: 6px solid rgb(219 48 48);
+    margin-bottom: 10px;
+    }
+.ErrorBox p{
+    color: rgb(151,6,6);
+}
+.alert-svg{
+    width: 20px;
+    margin-right: 6px;
+}
