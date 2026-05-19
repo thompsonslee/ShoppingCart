@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function SideBar({cartQty}){
     return(
         <div className='sidebar'>
-            <h1>Lorem Ipsum</h1>
+            <h1>SIMW</h1>
             <ul className='main-list'>
                 <li>
                     <Link to= '/' className='sidebar-link'>
@@ -31,6 +31,17 @@ export default function SideBar({cartQty}){
                     </Link>
                 </li>
             </ul>
+            <button className = "tempButton" onClick={() => window.location.href = "https://google.com"}> exit </button>
+            <select>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Filipino">Filipino</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Mandarin">Mandarin</option>
+                <option value="Nepali">Nepali</option>
+                <option value="Bengali">Bengali</option>
+            </select>
             <div className='bottom-links'>
                 <li>Help</li>
                 <li>Contact Us</li>
